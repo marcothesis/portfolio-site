@@ -160,15 +160,48 @@ body {
   border-radius: 12px;
 }
 
+/* ---------- Site Nav ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--divider);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.site-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.nav__logo-svg {
+  height: 28px;
+  width: auto;
+}
+
+.nav__logo:hover {
+  color: var(--accent);
+}
+
 /* ---------- Theme Toggle ---------- */
 .theme-toggle {
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  z-index: 100;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   border: 1px solid var(--toggle-border);
   background: var(--toggle-bg);
   color: var(--toggle-icon);
@@ -177,11 +210,10 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: var(--card-shadow);
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover {
-  box-shadow: var(--card-shadow-hover);
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -214,7 +246,7 @@ body {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: 140px 0 80px;
+  padding: 80px 0 80px;
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -653,7 +685,7 @@ body {
   }
 
   .hero {
-    padding: 120px 0 60px;
+    padding: 60px 0 60px;
     min-height: auto;
   }
 
@@ -702,11 +734,17 @@ body {
     padding: 60px 0 80px;
   }
 
+  .site-nav__inner {
+    height: 52px;
+  }
+
+  .nav__logo-svg {
+    height: 24px;
+  }
+
   .theme-toggle {
-    top: 16px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .footer__inner {
@@ -721,8 +759,17 @@ body {
     font-size: 15px;
   }
 
+  .nav__wordmark {
+    display: none;
+  }
+
+  .nav__logo-svg {
+    height: 22px;
+    width: 30px;
+  }
+
   .hero {
-    padding: 100px 0 48px;
+    padding: 48px 0 48px;
   }
 
   .hero__subtitle {
